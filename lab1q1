@@ -1,37 +1,92 @@
 #include<iostream>
-using namespace std;
+using namespace std ;
 
-void reverse_array(int arr[], int size )
+int main ()
 {
-	int start = 0  ;
-	int end = size -1 ;
-	
-	while( start < end )
-	{  //swap
-	   int temp = arr[start];
-	   arr[start]= arr[end];
-	   arr[end] = temp ;
-	   	start++;
-	   	end-- ;
-	}
+	int arr[50] , num ;
+	int arr1[50];
+int p ; 
+cout<<"enter 5 numbers for array "<<endl;  //create
+ for(int i = 0 ; i <5;i++)
+ {
+cin>> arr[i];
+ }
+ 
+cout<<"Select the required option"<<endl;
+cout<<"1.CREATE \n 2.DISPLAY \n 3.INSERT \n 4.DELETE \n 5.Linear Search \n 6.Exit "<<endl;
+cout<<"enter "<<endl;
+cin>>p;
+
+switch (p)
+{
+	case 1 :  p  ;
+ cout<<"enter 5 numbers for array "<<endl;  //create
+ for(int i = 0 ; i <5;i++)
+ {
+cin>> arr1[i];
+ }
+ break ;
+ 
+ case 2 : for(int i = 0 ; i <5;i++)  //display
+ {
+cout<<arr[i];
+ }
+ break ;
+ case 3 : 
+ 
+ cout<<"\n";
+ 
+ cout<<"enter the position( 1 to 5) where you want to insert :)"<<endl; //insert
+ cin>>p ; 
+ cout<<"enter the no u want to insert "<<endl;
+ cin>>num;
+ for(int i = 4 ; i >= p-1 ; i--)
+ {
+ 	arr[i+1]= arr[i] ;
+ 	}
+  arr[p-1]= num ; 
+  
+  for(int i = 0 ; i <6;i++)  //display
+ {
+cout<<arr[i];
+ }
+ 
+ break ;
+ case 4 :
+ 
+ cout<<"\n";
+ 
+  cout<<"enter the position( 1 to 5) which you want to delete :)"<<endl; //insert
+ cin>>p ; 
+ 
+ 
+ 
+ for(int i = 0 ; i >= p-1 ; i++)
+ {
+arr[i]=arr[i+1];
+ }
+ for(int i = 0 ; i <4; i++)
+ {
+cout<<arr[i];
+ }
+ 
+ case 5 :
+ 	 int num1 = 0 ;
+
+ cout<<"\n";
+ cout<<"enter the number that you want to linear search "<<endl;
+ cin>>num;
+ 
+ for(int i = 0 ; i<5 ;i++ ){
+if ( arr[i]== num ){	
+cout<<"success , number found at index "<<i<<endl;
+num1++ ;
 }
-int main()
-{
-	int arr[50] = {1,2,3,4,5};
-	int size = sizeof(arr)/sizeof(arr[0]) ;
-	cout<<"Original Array "<<endl;
-	 for(int i = 0 ; i< size ; i++)
-	 {
-	 	cout<<arr[i]<<endl;
-	 }
-	
-	cout<<"Reversed Array"<<endl;
-	
-	reverse_array(arr, size);
-	for(int i = 0 ; i< size ; i++)
-	 {
-	 	cout<<arr[i]<<endl;
-	 }
-	 
-	 return 0 ; 	
+ }
+ if(num1 ==0){
+ 	cout<<"number not found "<<endl;
+ }
+ 	break ; 	
+}
+return 0 ; 
 }
